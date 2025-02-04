@@ -16,9 +16,9 @@ code {
 }
 
 /* Formatação geral dos cards (não é o correto mas está sendo usado apenas para aprendizado) */
-.cards {
+/* .cards {
   display: flex;
   gap: 28px;
   flex-wrap: wrap;
   justify-content: center;
-}
+} */
