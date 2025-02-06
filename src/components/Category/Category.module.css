@@ -9,3 +9,6 @@
     flex-wrap: wrap;
     justify-content: center;
 }
+.category h2 {
+    padding-block: 1rem;
+}
