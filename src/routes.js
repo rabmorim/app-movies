@@ -8,7 +8,7 @@ function AppRoutes() {
         <BrowserRouter>
             <Routes>
                 <Route path="/" element={<Home />}></Route>
-                <Route path="/watch" element={<Watch />}></Route>
+                <Route path="/watch/:id" element={<Watch />}></Route>
                 {/* O asterisco é usado para indicar qualquer outra rota a não ser as que estão declaradas */}
                 <Route path="*" element={<PageNotFound />}></Route>
             </Routes>
