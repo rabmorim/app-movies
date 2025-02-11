@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
+import { FaSearch } from "react-icons/fa";
 
 function Header() {
     return (
@@ -9,7 +10,10 @@ function Header() {
 
             <nav>
                 <Link to="/"> Home </Link>
-                <Link to="/watch">Assistir</Link>
+                <Link to="/search">
+                    <FaSearch className= {styles.searchIcons} />
+                    Pesquisar
+                </Link>
             </nav>
         </header>
     );
