@@ -14,8 +14,8 @@ function Category({ category, children }) {
 }
 
 //////////////
-//// Método auxiliar para filtragem de categorias, exportado para app.js
-//////
+////filterCategory()
+////Motivo: Método auxiliar para filtragem de categorias, exportado para app.js
 export function filterCategory(id) {
     return videos.filter(video => video.category === categories[id]);
 }
