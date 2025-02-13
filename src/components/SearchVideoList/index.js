@@ -4,7 +4,7 @@ import { useState } from "react";
 
 function SearchVideoList({ videos }) {
 
-    ///////Variaveis para controle de estado usando useState
+    ///////Variaveis para controle de estado usando useState(Hooks)
     const [searchText, setSearchText] = useState('');
     const foundVideos = filterVideos(videos, searchText);
 

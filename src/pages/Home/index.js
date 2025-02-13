@@ -4,6 +4,7 @@ import Banner from "../../components/Banner";
 import Container from "../../components/Container";
 import Card from "../../components/Card";
 import Category, { categories, filterCategory } from "../../components/Category";
+import Carousel from "../../components/Carousel";
 
 //////////////
 //// Página Home da aplicação
@@ -16,9 +17,12 @@ function Home() {
       <Container>
         {categories.map((category, index) => (
           <Category key={index} category={category}>
-            {filterCategory(index).map(video => (
-              <Card id={video.id} key={video.id} />
-            ))}
+            <Carousel>
+              {filterCategory(index).map(video => (
+                <Card id={video.id} key={video.id} />
+              ))}
+            </Carousel>
+
           </Category>
         ))}
       </Container>
