@@ -16,7 +16,7 @@ function VideoList({ videos, emptyHeading }) {
             <h2>{heading}</h2>
             <section className={styles.videos}>
                 {
-                    videos.map((video) => <Card id={video.id} key={video.id} />)
+                    videos.map((video) => <Card id={video.id} key={video.id}  />)
                 }
             </section>
         </>

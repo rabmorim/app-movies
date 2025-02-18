@@ -1,3 +1,6 @@
 .favorites{
     padding-top: 88px;
 }
+.favorites h2 {
+    padding-block: 10px;
+}

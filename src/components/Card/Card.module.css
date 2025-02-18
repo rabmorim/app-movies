@@ -13,7 +13,7 @@
 }
 
 .capa:hover {
-    transform: scale(1.15) translateY(-5px);
+    transform: scale(1.15) translateY(-1px);
     box-shadow: 0 0 10px #222;
     border-radius: 10px;
 }
@@ -29,5 +29,29 @@
     justify-content: center;
     position: absolute;
     bottom: 50px;
-    right: 5px; 
+    right: 10px;
+}
+
+.icon:hover {
+    background-color: #000000;
+    cursor: pointer;
+}
+
+.iconsSearch {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background-color: #00000050;
+    border-radius: 10px;
+}
+
+.iconsSearch:hover {
+    background-color: #000000;
+    cursor: pointer;
 }
