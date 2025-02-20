@@ -1,12 +1,18 @@
 import styles from "./SearchVideoList.module.css";
 import VideoList from "../VideoList";
-import { useState } from "react";
+import Loader from "../Loader";
+import { useEffect, useState } from "react";
 
 function SearchVideoList({ videos }) {
 
     ///////Variaveis para controle de estado usando useState(Hooks)
     const [searchText, setSearchText] = useState('');
+    const [loading, setLoading] = useState(true);
+
     const foundVideos = filterVideos(videos, searchText);
+    useEffect(() => {
+        setTimeout(() => setLoading(false), 500)
+    }, [])
 
     return (
         <section className={styles.container}>
@@ -16,10 +22,12 @@ function SearchVideoList({ videos }) {
                 value={searchText}
                 onChange={event => setSearchText(event.target.value)}
             />
-            <VideoList
-                videos={foundVideos}
-                emptyHeading={`Video sobre "${searchText}" não encontrado`}
-            />
+            {loading ? <Loader /> :
+                <VideoList
+                    videos={foundVideos}
+                    emptyHeading={`Video sobre "${searchText}" não encontrado`}
+                />
+            }
         </section>
     );
 

@@ -58,44 +58,43 @@ function Form() {
     ///// Motivo: Função para salvamento do formulario
     function onSave(e) {
         const urlVideo = valideUrl(url);
+
         //PreventDefault é feito para evitar o comportamento padrão do formulário
         e.preventDefault()
-        //Validar a existencia do vídeo
+
+        //Valida a existência do vídeo e faz as verificações necessárias
         if (!checkVideo(url)) {
-            //Guardar a url e a categoria do novo vídeo
-            const newVideo = { url, category }
-            setVideos([...videos, newVideo])
-            localStorage.setItem("videos", JSON.stringify([...videos, newVideo]))
-            //Limpar o formulario
-            setUrl('');
-            setCategory('');
+
+            if (!category || category === "-") {
+                setErrors('Erro: Escolha uma categoria!');
+                setTimeout(() => setErrors(''), 4000);
+                setUrl('');
+                return
+            }
+            //Validar url
+            if (urlVideo) {
+                //Guardar a url e a categoria do novo vídeo
+                const newVideo = { url, category }
+                setVideos([...videos, newVideo])
+                localStorage.setItem("videos", JSON.stringify([...videos, newVideo]))
+                setUrl('');
+                setCategory('');
+                return
+            } else {
+
+                setErrors(' Erro: URL inválida!')
+                setTimeout(() => setErrors(''), 4000);
+                setUrl('');
+                setCategory('');
+                return
+            }
+
         } else {
+
             setErrors(' Erro: Vídeo já cadastrado!')
             setTimeout(() => setErrors(''), 4000);
             setUrl('');
             setCategory('');
-            return
-        }
-        //Validar URL
-        if (urlVideo) {
-            //Guardar a url e a categoria do novo vídeo
-            const newVideo = { url, category }
-            setVideos([...videos, newVideo])
-            localStorage.setItem("videos", JSON.stringify([...videos, newVideo]))
-            //Limpar o formulario
-            setUrl('');
-            setCategory('');
-        } else {
-            setErrors(' Erro: URL inválida!')
-            setTimeout(() => setErrors(''), 4000);
-            setUrl('');
-            setCategory('');
-            return
-        }
-        //Validar categoria
-        if (!category || category === "-") {
-            setErrors('Erro: Escolha uma categoria!');
-            setTimeout(() => setErrors(''), 4000);
             return
         }
     }
@@ -104,13 +103,15 @@ function Form() {
     //// valideUrl()
     ///// Motivo: Função para validar a url do vídeo
     function valideUrl(url) {
-        const regex = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9\-_]+)$/;
-        if (!regex.test(url) || url.length < 43) {
-            setErrors('Erro: URL inválida!')
+        const regex = /^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com\/(?:embed\/|watch\?v=)|youtu\.be\/)([a-zA-Z0-9\-_]+)(?:\S*)?$/;
+        const match = url.match(regex);
+
+        if (!match) {
+            setErrors('Erro: URL inválida!');
             setTimeout(() => setErrors(''), 4000);
-            return false
+            return false;
         } else {
-            return url.substring(32, 43) //Pega o id do vídeo cadastrado
+            return match[1]; // Retorna o ID do vídeo
         }
     }
 
