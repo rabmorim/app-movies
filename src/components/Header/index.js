@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FaHeart, FaSearch } from "react-icons/fa";
+import { RiAddLargeLine } from "react-icons/ri";
 
 function Header() {
     return (
@@ -15,8 +16,12 @@ function Header() {
                     Pesquisar
                 </Link>
                 <Link to="/favorites">
-                    <FaHeart className={styles.Icons}/>
+                    <FaHeart className={styles.Icons} />
                     Favoritos
+                </Link>
+                <Link to="/cadastre">
+                    <RiAddLargeLine className={styles.Icons} />
+                    Cadastrar
                 </Link>
             </nav>
         </header>

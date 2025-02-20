@@ -11,7 +11,7 @@ function SearchVideoList({ videos }) {
 
     const foundVideos = filterVideos(videos, searchText);
     useEffect(() => {
-        setTimeout(() => setLoading(false), 500)
+        setTimeout(() => setLoading(false), 800)
     }, [])
 
     return (
