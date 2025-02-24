@@ -31,3 +31,22 @@
     margin-right: 6px;
     font-size: 75%;
 }
+/* Trabalhando com responsividade */
+@media (max-width: 480px) {
+    .header span {
+        font-size: 1.5rem;
+    }
+    .header a {
+        font-size: 0.95rem;
+        padding-inline: 0.5rem;
+    }
+}
+
+@media (max-width: 380px) {
+    .header span {
+        font-size: 1.5rem;
+    }
+    .header a {
+        font-size: 0.75rem;
+    }
+}

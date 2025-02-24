@@ -8,9 +8,7 @@
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: "Poppins", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -22,16 +20,21 @@ code {
 
 /* Formatão da Barra de rolagem da aplicação */
 body::-webkit-scrollbar {
-  width: 12px;     /* Largura da barra de rolagem*/
+  width: 12px;
+  /* Largura da barra de rolagem*/
   background-color: #222;
 }
 
 body::-webkit-scrollbar-track {
-  background-color: #222;  /* Cor de fundo da barra de rolagem*/
+  background-color: #222;
+  /* Cor de fundo da barra de rolagem*/
 }
 
 body::-webkit-scrollbar-thumb {
-  background-color: #b71c1c; /*Cor do scroll(thumb) da barra de rolagem */
-  border-radius: 20px;  /*Arredondar o scroll*/
-  border: 3px solid #222; /*Borda no scroll */
+  background-color: #b71c1c;
+  /*Cor do scroll(thumb) da barra de rolagem */
+  border-radius: 20px;
+  /*Arredondar o scroll*/
+  border: 3px solid #222;
+  /*Borda no scroll */
 }
